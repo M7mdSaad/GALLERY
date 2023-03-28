@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <img src="img/photo_2023-03-13_10-17-09.jpg" width="25%" alt="0">
+    <br>
+    <button onclick="back()"> 
+        <
+    </button>
+    <button onclick="next()"> 
+        >
+    </button>
+
+    <script>
+        var counter=0;
+        var photos = ["img/photo_2023-03-13_10-17-23.jpg", "img/photo_2023-03-13_10-17-18.jpg", "img/photo_2023-03-13_10-17-15.jpg", "img/photo_2023-03-13_10-17-09.jpg"];
+        function next(){
+            counter++;
+            if(counter<photos.length){
+                document.querySelector("img").setAttribute("src",photos[counter]);
+            }else{
+                counter=0;
+                document.querySelector("img").setAttribute("src",photos[counter]);
+            }
+            console.log(counter);
+        }
+        function back(){
+            counter--;
+            if(counter>0){
+                document.querySelector("img").setAttribute("src",photos[counter]);
+            }
+            else{
+                counter =photos.length-1;
+                document.querySelector("img").setAttribute("src",photos[counter]);
+            }
+            console.log(counter);
+        }
+    </script>
+</body>
+</html>
